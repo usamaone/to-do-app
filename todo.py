@@ -1,4 +1,4 @@
-# todo.py
+3# todo.py
 tasks = []
 
 def add_task(task):
@@ -17,3 +17,12 @@ if __name__ == "__main__":
     add_task("Learn Git")
     add_task("Practice Python")
     view_tasks()
+    delete_task(1)
+    view_tasks()
+
+def delete_task(index):
+    if 1 <= index <= len(tasks):
+        removed_task = tasks.pop(index - 1)
+        print(f"Task deleted: {removed_task}")
+    else:
+        print("Invalid task number.")

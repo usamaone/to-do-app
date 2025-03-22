@@ -17,12 +17,22 @@ if __name__ == "__main__":
     add_task("Learn Git")
     add_task("Practice Python")
     view_tasks()
-    delete_task(1)
+    mark_complete(1)
     view_tasks()
 
 def delete_task(index):
     if 1 <= index <= len(tasks):
         removed_task = tasks.pop(index - 1)
         print(f"Task deleted: {removed_task}")
+    else:
+        print("Invalid task number.")
+
+completed_tasks = []
+
+def mark_complete(index):
+    if 1 <= index <= len(tasks):
+        completed_task = tasks.pop(index - 1)
+        completed_tasks.append(completed_task)
+        print(f"Task marked as complete: {completed_task}")
     else:
         print("Invalid task number.")
